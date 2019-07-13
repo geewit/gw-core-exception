@@ -6,6 +6,7 @@ package io.geewit.core.exception;
  */
 @SuppressWarnings({"unused"})
 public interface ErrorCode {
+    String UNKNOWN_ERROR = "unknown";
     /**
      * 非法的参数
      */
