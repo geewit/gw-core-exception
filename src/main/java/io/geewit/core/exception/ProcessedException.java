@@ -8,12 +8,12 @@ import org.springframework.http.HttpStatus;
  */
 @SuppressWarnings({"unused"})
 public class ProcessedException extends CustomizedException {
-    protected ProcessedException(String message) {
+    public ProcessedException(String message) {
         super(message, HttpStatus.OK);
         this.code = ErrorCode.UNKNOWN_ERROR;
     }
 
-    protected ProcessedException(String message, String code) {
+    public ProcessedException(String message, String code) {
         this(message);
         this.code = code;
     }
