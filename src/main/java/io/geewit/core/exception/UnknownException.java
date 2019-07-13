@@ -8,13 +8,21 @@ import org.springframework.http.HttpStatus;
  */
 @SuppressWarnings({"unused"})
 public class UnknownException extends CustomizedException {
-    public UnknownException(String message) {
-        super(message, HttpStatus.INTERNAL_SERVER_ERROR);
+    public UnknownException(String message, HttpStatus httpStatus) {
+        super(message, httpStatus);
         this.code = ErrorCode.UNKNOWN_ERROR;
     }
 
+    public UnknownException(String message) {
+        this(message, HttpStatus.OK);
+    }
+
     public UnknownException(String message, String code) {
-        this(message);
+        this(message, code, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    public UnknownException(String message, String code, HttpStatus httpStatus) {
+        super(message, httpStatus);
         this.code = code;
     }
 
