@@ -14,11 +14,11 @@ public class ProcessedException extends CustomizedException {
     }
 
     public ProcessedException(String message) {
-        this(message, HttpStatus.OK);
+        this(message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     public ProcessedException(String message, String code) {
-        this(message, code, HttpStatus.OK);
+        this(message, code, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     public ProcessedException(String message, String code, HttpStatus httpStatus) {
