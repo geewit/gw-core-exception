@@ -1,14 +1,12 @@
 package io.geewit.core.exception;
 
-import org.springframework.http.HttpStatus;
-
 /**
  * 处理过的异常
  * @author geewit
  */
 @SuppressWarnings({"unused"})
 public class ProcessedException extends CustomizedException implements ErrorCode {
-    public ProcessedException(String message, HttpStatus httpStatus) {
+    public ProcessedException(String message, int httpStatus) {
         super(message, httpStatus);
         this.code = ErrorCode.UNKNOWN_ERROR;
     }
@@ -21,7 +19,7 @@ public class ProcessedException extends CustomizedException implements ErrorCode
         this(message, code, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    public ProcessedException(String message, String code, HttpStatus httpStatus) {
+    public ProcessedException(String message, String code, int httpStatus) {
         super(message, httpStatus);
         this.code = code;
     }

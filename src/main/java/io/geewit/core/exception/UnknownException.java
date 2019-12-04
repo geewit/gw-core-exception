@@ -1,6 +1,5 @@
 package io.geewit.core.exception;
 
-import org.springframework.http.HttpStatus;
 
 /**
  * 未知的异常
@@ -8,7 +7,7 @@ import org.springframework.http.HttpStatus;
  */
 @SuppressWarnings({"unused"})
 public class UnknownException extends CustomizedException implements ErrorCode {
-    public UnknownException(String message, HttpStatus httpStatus) {
+    public UnknownException(String message, int httpStatus) {
         super(message, httpStatus);
         this.code = ErrorCode.UNKNOWN_ERROR;
     }
@@ -21,7 +20,7 @@ public class UnknownException extends CustomizedException implements ErrorCode {
         this(message, code, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    public UnknownException(String message, String code, HttpStatus httpStatus) {
+    public UnknownException(String message, String code, int httpStatus) {
         super(message, httpStatus);
         this.code = code;
     }

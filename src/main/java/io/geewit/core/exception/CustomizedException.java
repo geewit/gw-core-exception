@@ -1,6 +1,6 @@
 package io.geewit.core.exception;
 
-import org.springframework.http.HttpStatus;
+
 
 /**
  * @author geewit
@@ -13,15 +13,15 @@ public abstract class CustomizedException extends RuntimeException {
         this.httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
     }
 
-    public CustomizedException(String message, HttpStatus httpStatus) {
+    public CustomizedException(String message, int httpStatus) {
         super(message);
         this.httpStatus = httpStatus;
     }
 
 
-    private HttpStatus httpStatus;
+    private int httpStatus;
 
-    public HttpStatus getHttpStatus() {
+    public int getHttpStatus() {
         return httpStatus;
     }
 }
