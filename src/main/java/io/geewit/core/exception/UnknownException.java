@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
  * @author geewit
  */
 @SuppressWarnings({"unused"})
-public class UnknownException extends CustomizedException {
+public class UnknownException extends CustomizedException implements ErrorCode {
     public UnknownException(String message, HttpStatus httpStatus) {
         super(message, httpStatus);
         this.code = ErrorCode.UNKNOWN_ERROR;
@@ -28,6 +28,7 @@ public class UnknownException extends CustomizedException {
 
     private String code;
 
+    @Override
     public String getCode() {
         return code;
     }

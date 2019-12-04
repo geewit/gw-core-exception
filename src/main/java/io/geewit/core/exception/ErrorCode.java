@@ -11,4 +11,6 @@ public interface ErrorCode {
      * 非法的参数
      */
     String INVALID_PARAMETERS = "invalid_parameters";
+
+    String getCode();
 }
