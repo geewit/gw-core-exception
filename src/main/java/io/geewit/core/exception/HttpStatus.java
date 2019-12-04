@@ -6,6 +6,11 @@ package io.geewit.core.exception;
  */
 public interface HttpStatus {
     /**
+     * @return http status
+     */
+    int getHttpStatus();
+
+    /**
      * Status code (100) indicating the client can continue.
      */
     int CONTINUE = 100;

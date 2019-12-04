@@ -7,7 +7,7 @@ package io.geewit.core.exception;
  * @since  2017/4/15
  */
 @SuppressWarnings({"unused"})
-public abstract class CustomizedException extends RuntimeException {
+public abstract class CustomizedException extends RuntimeException implements HttpStatus {
     public CustomizedException(String message) {
         super(message);
         this.httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
@@ -21,6 +21,7 @@ public abstract class CustomizedException extends RuntimeException {
 
     private int httpStatus;
 
+    @Override
     public int getHttpStatus() {
         return httpStatus;
     }
